@@ -1,5 +1,6 @@
 import React from 'react'
 import videoBanner from '../assets/videos/bannervideo.mp4'
+import { Link } from 'react-router-dom'
 
 
 
@@ -17,7 +18,7 @@ const HeroBanner = () => {
                             <p className='banner-description'>
                                 Unleash Your Inner Marksman: Discover Our Collection of High-Powered Airsoft Guns
                             </p>
-                            <a href="/shopnow" className='text-decoration-none text-white btn btn-banner'>Shop now!</a>
+                            <Link to={"/shopnow"} className='text-decoration-none text-white btn btn-banner'>Shop now!</Link>
                         </div>
                     </div>
                 </div>
