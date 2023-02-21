@@ -387,3 +387,13 @@ body {
 .product-description p {
     font-size: 18px;
 }
+
+/* CART */
+
+.cart {
+    height: 750px;
+}
+
+.product-name {
+    width: 40%;
+}

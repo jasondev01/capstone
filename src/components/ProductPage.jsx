@@ -1,5 +1,5 @@
 import  React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const ProductPage = () => {
@@ -117,9 +117,9 @@ const ProductPage = () => {
                         </span>
                     </div>
                     <div className='products-page-buttons d-flex gap-4'>
-                        <a href="" className='btn text-decoration-none add-cart'>
+                        <Link to={`/cart/${product.id}`} className='link btn text-decoration-none add-cart'>
                             Add to Cart 
-                        </a>
+                        </Link>
                         <a href="" className='btn text-decoration-none buy-now'>
                             Buy Now
                         </a>

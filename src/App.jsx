@@ -5,6 +5,7 @@ import Home from './components/Home'
 import ShopNow from './components/ShopNow'
 import Featured from './components/Featured'
 import ProductPage from './components/ProductPage'
+import Cart from './components/Cart'
 import './App.css'
 
 
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/shopnow" element={<ShopNow />} />
                 <Route path="/featured" element={<Featured />} />
                 <Route path="/product-details/:id" element={<ProductPage />} />
+                <Route path="/cart/:id" element={<Cart />} />
             </Route>
         </Routes>
     </>
