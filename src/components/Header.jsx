@@ -20,10 +20,9 @@ const Header = () => {
                 <div className='menu-gap gap-4 d-flex'>
                     <ul className='nav-menu list-unstyled d-flex gap-4 m-0 p-0 align-items-end'>
                         <li className="menu-link">
-                            <a href="
-                            /" className='text-decoration-none'>
+                            <Link to={ '/' } className='text-decoration-none'>
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         {/* <li className="menu-link">
                             <a href="
@@ -32,10 +31,9 @@ const Header = () => {
                             </a>
                         </li> */}
                         <li className="menu-link">
-                            <a href="
-                            /shopnow" className='text-decoration-none'>
+                            <Link to={ '/shopnow' } className='text-decoration-none'>
                                 Products
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                     <ul className="cart-user-menu list-unstyled d-flex gap-4 m-0 p-0">
