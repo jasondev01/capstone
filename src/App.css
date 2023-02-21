@@ -167,7 +167,8 @@ body {
     object-fit: cover;
 }
 
-.shopnow h2 {
+.shopnow h2,
+.brands h2 {
     position: relative;
     background: linear-gradient(to right, #ffffff, #ffffff), #bb5555;;
     -webkit-background-clip: text, padding-box;
@@ -179,7 +180,8 @@ body {
 
 }
 
-.shopnow h2::before {
+.shopnow h2::before,
+.brands h2::before {
     content: "";
     position: absolute;
     top: -50%;

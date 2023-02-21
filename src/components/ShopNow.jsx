@@ -53,7 +53,7 @@ const ShopNow = () => {
     return (
         <section className='shopnow container-xxl py-5 '>
             <h2 className='text-center w-25 mx-auto mb-5'>
-                Shop Now
+                Categories
             </h2>
             <ul className="category-list list-unstyled d-flex justify-content-center gap-5 p-0 mb-5">
                 <li className="category">
