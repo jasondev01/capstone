@@ -342,13 +342,18 @@ body {
 }
 
 .quantity {
-    width: 7%;
-    height: 90%;
+    width: 100%;
     margin: auto 0;
+    border: 1px solid #bb5555;
+    padding: 4px 15px;
 }
 
 .quantity:focus {
     outline: 1px solid #bb5555;
+}
+
+.price span button {
+    padding: 4px 15px;
 }
 
 .add-cart,

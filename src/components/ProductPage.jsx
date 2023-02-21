@@ -51,67 +51,89 @@ const ProductPage = () => {
         coverImageRef.current.src = src;
     };
 
+    const [count, setCount] = useState(1);
 
-  return (
-    <section className='container-xl py-5 my-5'>
-        <div className="row">
-            <div className="col-6">
-                <div className="display-image-container">
-                    <div className="cover-image-container">
-                        <img
-                            ref={coverImageRef}
-                            src={getCoverImagePath(product.cover_image)}
-                            alt={product.productName}
-                            className="cover-image"
-                        />
+    const incrementCount = () => {
+        if (count < 1) {
+          setCount(1); // Set the count to the minimum value of 1
+        } else {
+          setCount(prevCount => prevCount + 1);
+        }
+    };
+      
+    const decrementCount = () => {
+        if (count <= 1) {
+          setCount(1); // Set the count to the minimum value of 1
+        } else {
+          setCount(prevCount => prevCount - 1);
+        }
+    };
+
+
+    return (
+        <section className='container-xl py-5 my-5'>
+            <div className="row">
+                <div className="col-6">
+                    <div className="display-image-container">
+                        <div className="cover-image-container">
+                            <img
+                                ref={coverImageRef}
+                                src={getCoverImagePath(product.cover_image)}
+                                alt={product.productName}
+                                className="cover-image"
+                            />
+                        </div>
+                        <div className='row small-images'>
+                            { product.images && product.images.map((image, index)=> (
+                                <div className="col-3" key={image.id}>
+                                    <img
+                                    src={getSmallImagePath(image.image)}
+                                    alt=""
+                                    className={`small-image ${index === selectedImage ? 'selected' : ''}`}
+                                    onClick={() => handleSmallImageClick(index, getSmallImagePath(image.image))}
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <div className='row small-images'>
-                        { product.images && product.images.map((image, index)=> (
-                            <div className="col-3" key={image.id}>
-                                <img
-                                src={getSmallImagePath(image.image)}
-                                alt=""
-                                className={`small-image ${index === selectedImage ? 'selected' : ''}`}
-                                onClick={() => handleSmallImageClick(index, getSmallImagePath(image.image))}
-                                />
-                            </div>
-                        ))}
+                </div>
+                <div className="col-6 d-flex flex-column gap-5">
+                    <div className="product-title">
+                        <h2 className='fs-1'>
+                            { product.productName  }
+                        </h2>
+                        <small className='text-secondary'>
+                            { product.sku  }
+                        </small>
+                    </div>
+                    <div className='price d-flex gap-3'>
+                        <p className='fs-2 m-0'>
+                            ${ product.price  }
+                        </p>
+                        <span className='d-flex gap-2'>
+                            <button onClick={decrementCount}>-</button>
+                                <span className='quantity fs-4'>{ count }</span>
+                            <button onClick={incrementCount}>+</button>
+                        </span>
+                    </div>
+                    <div className='products-page-buttons d-flex gap-4'>
+                        <a href="" className='btn text-decoration-none add-cart'>
+                            Add to Cart 
+                        </a>
+                        <a href="" className='btn text-decoration-none buy-now'>
+                            Buy Now
+                        </a>
+                    </div>
+                    <div className='product-description d-flex flex-column gap-3'>
+                        <h4>Product Description</h4>
+                        <p>
+                            { product.description  }
+                        </p>
                     </div>
                 </div>
             </div>
-            <div className="col-6 d-flex flex-column gap-5">
-                <div className="product-title">
-                    <h2 className='fs-1'>
-                        { product.productName  }
-                    </h2>
-                    <small className='text-secondary'>
-                        { product.sku  }
-                    </small>
-                </div>
-                <div className='price d-flex gap-3'>
-                    <p className='fs-2 m-0'>
-                        ${ product.price  }
-                    </p>
-                    <input type="number" placeholder='1' min="1" className='quantity fs-4' />
-                </div>
-                <div className='products-page-buttons d-flex gap-4'>
-                    <a href="" className='btn text-decoration-none add-cart'>
-                        Add to Cart 
-                    </a>
-                    <a href="" className='btn text-decoration-none buy-now'>
-                        Buy Now
-                    </a>
-                </div>
-                <div className='product-description d-flex flex-column gap-3'>
-                    <h4>Product Description</h4>
-                    <p>
-                        { product.description  }
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default ProductPage
