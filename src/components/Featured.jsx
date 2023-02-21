@@ -31,7 +31,7 @@ const Featured = () => {
 
     return (
         <section className='featured container-xl'>
-            <h2 className='text-center py-5'>
+            <h2 className='text-center my-5 mx-auto'>
                 Featured Products
             </h2>
             <div className="row d-flex">

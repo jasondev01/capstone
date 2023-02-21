@@ -8,7 +8,7 @@ import brand5 from "../assets/images/brand5.avif"
 
 const Brands = () => {
     return (
-        <div className='brands container-xl py-5 my-5'>
+        <div className='brands container-xl py-5'>
             <h2 className='mb-5 mx-auto text-center w-25'>
                 Brands
             </h2>

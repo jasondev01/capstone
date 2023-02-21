@@ -42,6 +42,10 @@ body {
     color: #bb5555;
 }
 
+.hero-banner .col-12{
+    height: 750px;
+}
+
 .col-12 {
     height: 600px;
     position: relative;
@@ -63,6 +67,7 @@ body {
     position: absolute;
     background-color: rgba(151, 151, 151, 0.356);
 }
+
 
 .banner-title {
     font-size: 55px;
@@ -167,8 +172,13 @@ body {
     object-fit: cover;
 }
 
+.featured h2 {
+    width: 35%;
+}
+
 .shopnow h2,
-.brands h2 {
+.brands h2,
+.featured h2 {
     position: relative;
     background: linear-gradient(to right, #ffffff, #ffffff), #bb5555;;
     -webkit-background-clip: text, padding-box;
@@ -177,11 +187,11 @@ body {
     overflow: hidden;
     font-weight: 700;
     text-shadow: 1px 1px 5px #fff;
-
 }
 
 .shopnow h2::before,
-.brands h2::before {
+.brands h2::before,
+.featured h2::before {
     content: "";
     position: absolute;
     top: -50%;
